@@ -1,0 +1,92 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>
+		Calculator
+	</title>
+</head>
+<body>
+	<h1
+		style= "text-align:center;">Calculator
+	</h1>
+	<input type= "number", id= 'Value-One' style="margin-top: 10px; margin-right: 10px; height: 20px; width:145px; text-align:center; padding: 10px" placeholder= 'Value One'>
+
+	<input type= "number", id= 'Value-Two' style="margin-top: 10px; margin-right: 10px; height: 20px; width:145px; text-align:center; padding: 10px" placeholder= 'Value Two'>
+
+	<div id='result' style="margin-top: 10px; background-color:grey; height: 30px; width: 330px; padding: 10px">
+
+	</div>
+	<div style= "margin-top: 10px">
+		<button  style="padding: 10px" onclick="numberClick(0)">0</button>
+		<button  style="padding: 10px" onclick="numberClick(1)">1</button>
+		<button  style="padding: 10px" onclick="numberClick(2)">2</button>
+		<button  style="padding: 10px" onclick="numberClick(3)">3</button>
+		<button  style="padding: 10px" onclick="numberClick(4)">4</button>
+		<button  style="padding: 10px" onclick="numberClick(5)">5</button>
+		<button  style="padding: 10px" onclick="numberClick(6)">6</button>
+		<button  style="padding: 10px" onclick="numberClick(7)">7</button>
+		<button  style="padding: 10px" onclick="numberClick(8)">8</button>
+		<button  style="padding: 10px" onclick="numberClick(9)">9</button>
+	</div>
+	<div style= "margin-top: 15px">
+
+		<button  style="padding: 10px" onclick="numberClicks(0)">0</button>
+		<button  style="padding: 10px" onclick="numberClicks(1)">1</button>
+		<button  style="padding: 10px" onclick="numberClicks(2)">2</button>
+		<button  style="padding: 10px" onclick="numberClicks(3)">3</button>
+		<button  style="padding: 10px" onclick="numberClicks(4)">4</button>
+		<button  style="padding: 10px" onclick="numberClicks(5)">5</button>
+		<button  style="padding: 10px" onclick="numberClicks(6)">6</button>
+		<button  style="padding: 10px" onclick="numberClicks(7)">7</button>
+		<button  style="padding: 10px" onclick="numberClicks(8)">8</button>
+		<button  style="padding: 10px" onclick="numberClicks(9)">9</button>
+	</div>
+	<div style= "margin-top: 15px">
+		<button  style="padding: 10px; width:80px" onclick="add()">Add</button>
+		<button  style="padding: 10px; width:80px" onclick="sub()">Sub</button>
+		<button  style="padding: 10px; width:80px" onclick="mul()">Mul</button>
+		<button  style="padding: 10px; width:80px" onclick="div()">Div</button>
+		<button  style="padding: 10px" onclick="clean()">C</button>
+	</div>
+		<script>
+	
+			function numberClick(num) {
+			let existingValue = document.getElementById('Value-One').value;
+            document.getElementById('Value-One').value = existingValue + num;
+		}
+			function numberClicks(num) {
+			let existingValue = document.getElementById('Value-Two').value;
+            document.getElementById('Value-Two').value = existingValue + num;
+		}
+			function add() {
+			let valueOne= document.getElementById('Value-One').value;
+			let valueTwo= document.getElementById('Value-Two').value;
+			let res= parseInt(valueOne) + parseInt(valueTwo);
+			document.getElementById('result').innerText= 'Ans:' + res;
+		}
+			function sub() {
+			let valueOne= document.getElementById('Value-One').value;
+			let valueTwo= document.getElementById('Value-Two').value;
+			let res= parseInt(valueOne) - parseInt(valueTwo);
+			document.getElementById('result').innerText='Ans:' + res;
+		}
+			function mul() {
+			let valueOne= document.getElementById('Value-One').value;
+			let valueTwo= document.getElementById('Value-Two').value;
+			let res= parseInt(valueOne) * parseInt(valueTwo);
+			document.getElementById('result').innerText='Ans:' + res;
+		}
+			function div() {
+			let valueOne= document.getElementById('Value-One').value;
+			let valueTwo= document.getElementById('Value-Two').value;
+			let res= parseInt(valueOne) / parseInt(valueTwo);
+			document.getElementById('result').innerText='Ans:' + res;
+		}
+			function clean() {
+			document.getElementById('Value-One').value = "";
+			document.getElementById('Value-Two').value = "";
+			document.getElementById('result').innerText= "";
+		}
+	</script>
+</body>
+</html>
